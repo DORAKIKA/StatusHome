@@ -1,0 +1,26 @@
+@font-face{
+    font-family: YouSheBiaoTiHei;
+    src: url('./assets/优设标题黑.ttf')
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+html,body,#app{
+    height: 100%;
+}
+#app{
+    overflow: hidden;
+}
+
+
+.card{
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    padding: 1em;
+    border-radius: 1em;
+}
