@@ -11,7 +11,7 @@ export default defineComponent({
     const state = reactive({
         value: 30,
         type: 'normal',
-        charging: true,
+        charging: false,
         chargingTime: 0,
         disChargingTimer: 0,
     });
