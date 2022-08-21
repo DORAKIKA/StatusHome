@@ -45,7 +45,7 @@ export default defineComponent({
                 :is="card.type"
                 :card="card"
                 :style="{
-                '--row': card.rowSize,
+                ...getCssVar('--row',card.rowSize),
                 ...getCssVar('--col',card.colSize),
                 ...getCssVar('--theme',card.theme)
             }"
@@ -70,7 +70,9 @@ export default defineComponent({
     --col0: 6;
     --col1: 3;
     --col2: 2;
-    --row: 1;
+    --row0: 1;
+    --row1: 1;
+    --row2: 1;
     --theme0: rgba(0,0,0,0.5);
     --theme1: rgba(255,255,255);
     display: grid;
@@ -125,7 +127,7 @@ export default defineComponent({
     border-radius: 16px;
     transition: 0.3s;
     grid-column: span var(--col2);
-    grid-row: span var(--row);
+    grid-row: span var(--row2);
     transform-origin: 0 0!important;
     overflow: hidden;
     position: relative;
@@ -175,11 +177,13 @@ export default defineComponent({
 @media (max-width: 1200px) {
     #status-info .status-item{
         grid-column: span var(--col1);
+        grid-row: span var(--row1);
     }
 }
 @media (max-width: 768px) {
     #status-info .status-item{
         grid-column: span var(--col0);
+        grid-row: span var(--row0);
     }
 }
 </style>

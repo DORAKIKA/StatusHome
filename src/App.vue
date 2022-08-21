@@ -30,7 +30,7 @@ function handleToggleStatus(){
   <div
     id="app-wrapper"
   >
-    <site-info :page="config.siteInfo" class="page is-active"></site-info>
+    <site-info :site="config.siteInfo" class="page is-active"></site-info>
   </div>
   <status-info v-if="state.statusLoad" :cards="config.cards" :hide="state.statusHide"></status-info>
 </template>

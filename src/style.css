@@ -12,6 +12,7 @@ a{
 }
 html,body,#app{
     height: 100%;
+    font-family: YouSheBiaoTiHei;
 }
 #app{
     overflow: hidden;

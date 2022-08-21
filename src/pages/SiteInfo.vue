@@ -6,7 +6,7 @@ import IconLink from '../components/IconLink/IconLink.vue';
 
 export default defineComponent({
   name: 'SiteInfo',
-  props: ['page'],
+  props: ['site'],
   components: {IconLink},
   setup(){
 
@@ -17,14 +17,14 @@ export default defineComponent({
 
 <template>
     <div class="site-info">
-        <div class="avatar animate"><img :src="page.data.avatar" alt=""></div>
+        <div class="avatar animate"><img :src="site.avatar" alt=""></div>
         <div class="info-container animate card">
             <div class="title">
-                <div class="name">{{page.data.site}}</div>
-                <div class="desc">{{page.data.desc}}</div>
+                <div class="name">{{site.site}}</div>
+                <div class="desc">{{site.desc}}</div>
             </div>
             <div class="buttons">
-                <icon-link v-for="link in page.data.links" :key="link.url" :link="link" mode="all"></icon-link>
+                <icon-link v-for="link in site.links" :key="link.url" :link="link" mode="all"></icon-link>
             </div>
         </div>
     </div>
