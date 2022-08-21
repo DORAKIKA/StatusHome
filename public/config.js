@@ -48,21 +48,21 @@ const CONFIG = {
             },
             {
                 name: '博客',
-                url: 'https://dorakika.cn',
+                url: 'https://blog.dorakika.cn',
                 icon: {
                     type: 'image',
-                    value: 'https://dorakika.cn/img/icon_k.png'
+                    value: 'https://blog.dorakika.cn/img/icon_k.png'
                 },
                 color: 'orange'
             },
             {
-                name: 'bilibili',
-                url: 'https://bilibili.com/',
+                name: 'GITHUB',
+                url: 'https://github.com/dorakika/StatusHome',
                 icon: {
                     type: 'class',
-                    value: 'fas fa-tv'
+                    value: 'fab fa-github'
                 },
-                color: 'pink'
+                color: '#161b22'
             }
         ]
     },
@@ -99,7 +99,7 @@ const CONFIG = {
             value: {
                 icon: {
                     type: 'image',
-                    value: 'https://dorakika.cn/img/icon_k.png'
+                    value: 'https://blog.dorakika.cn/img/icon_k.png'
                 },
                 name: '个人博客'
             },
@@ -115,7 +115,7 @@ const CONFIG = {
                 name: 'GITHUB'
             },
             link: "https://dorakika.cn",
-            theme: ['#161b22', '3em']
+            theme: ['#161b22']
         },{
             type: 'BigText',
             value: '友情链接',

@@ -4,11 +4,25 @@
 
 ![image-20220821230553767](https://markdown-img-1303371957.cos.ap-nanjing.myqcloud.com/image-20220821230553767.png)
 
+## 电量与网络
+
+![image-20220822000655539](https://markdown-img-1303371957.cos.ap-nanjing.myqcloud.com/image-20220822000655539.png)
+
 ## “状态栏”
 
 ![image-20220821233458312](https://markdown-img-1303371957.cos.ap-nanjing.myqcloud.com/image-20220821233458312.png)
 
 ![image-20220821233540949](https://markdown-img-1303371957.cos.ap-nanjing.myqcloud.com/image-20220821233540949.png)
+
+## 使用
+
+```shell
+yarn install # 安装依赖
+yarn dev # 开发模式
+yarn build # 打包
+```
+
+- 在vercel上可以直接快捷部署
 
 ## 配置说明
 
@@ -176,21 +190,21 @@ const CONFIG = {
             },
             {
                 name: '博客',
-                url: 'https://dorakika.cn',
+                url: 'https://blog.dorakika.cn',
                 icon: {
                     type: 'image',
-                    value: 'https://dorakika.cn/img/icon_k.png'
+                    value: 'https://blog.dorakika.cn/img/icon_k.png'
                 },
                 color: 'orange'
             },
             {
-                name: 'bilibili',
-                url: 'https://bilibili.com/',
+                name: 'GITHUB',
+                url: 'https://github.com/dorakika/StatusHome',
                 icon: {
                     type: 'class',
-                    value: 'fas fa-tv'
+                    value: 'fab fa-github'
                 },
-                color: 'pink'
+                color: '#161b22'
             }
         ]
     },
@@ -227,7 +241,7 @@ const CONFIG = {
             value: {
                 icon: {
                     type: 'image',
-                    value: 'https://dorakika.cn/img/icon_k.png'
+                    value: 'https://blog.dorakika.cn/img/icon_k.png'
                 },
                 name: '个人博客'
             },
@@ -243,7 +257,7 @@ const CONFIG = {
                 name: 'GITHUB'
             },
             link: "https://dorakika.cn",
-            theme: ['#161b22', '3em']
+            theme: ['#161b22']
         },{
             type: 'BigText',
             value: '友情链接',
