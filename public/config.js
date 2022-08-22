@@ -88,7 +88,7 @@ const LINKS = [
         avatar: 'https://www.shibuyu.fun/logo'
     },{
         name: 'MrZeFr',
-        link: 'https://www.mrzefr.cn',
+        link: 'https://blog.mrzefr.cn',
         avatar: 'https://cdn.afdelivr.top/npm/hexo-mrzefr-filebed@1.3.4/image/ICO/Doraemon.ico'
     },{
         name: 'Ethan.Tzy',

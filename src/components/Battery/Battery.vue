@@ -14,6 +14,7 @@ export default defineComponent({
         charging: false,
         chargingTime: 0,
         disChargingTimer: 0,
+        enabled: window.navigator.getBattery ? true : false
     });
     function updateBattery(val){
         state.value = val>>0;
@@ -71,7 +72,7 @@ export default defineComponent({
     onBeforeUnmount(() => {
         if(Battery){
             Battery.removeEventListener('levelchange', handleLevelChange);
-            Battery.removeEventListener('chargingtimeChange', hanelChargingTime);
+            Battery.removeEventListener('chargingtimeChange', handleChargingTime);
             Battery.removeEventListener('dischargingtimechange', handleDischargingTime);
         }
     })
@@ -86,6 +87,7 @@ export default defineComponent({
 
 <template>
     <el-tooltip
+        v-if="state.enabled"
         effect="dark"
         :content="state.charging ? '充电中:'+state.value+'%' : state.value+'%'"
         placement="bottom"
