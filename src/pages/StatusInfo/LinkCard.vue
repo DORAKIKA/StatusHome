@@ -10,12 +10,17 @@ export default defineComponent({
   props: ['card'],
   components: {IconItem},
   setup(props){
-    let url = (props.card.link||'').replace(/^https?\:\/\//i,'')
+    let url = 'https://api.iowen.cn/favicon/'+(props.card.link||'').replace(/^https?\:\/\//i,'') + '.png'
+    let icon = {
+        type: 'image'
+    }
+    if(props.card.value.icon && props.card.value.icon.type === 'image'){
+        icon.value = props.card.value.icon.value || url
+    }else{
+        icon = props.card.value.icon
+    }
     return {
-        defaultIcon: {
-            type: 'image',
-            value: 'https://api.iowen.cn/favicon/'+url+'.png'
-        }
+        icon
     }
   },
   
@@ -24,7 +29,7 @@ export default defineComponent({
 
 <template>
     <a class="link-card" :href="card.link">
-        <icon-item :icon="card && card.value && card.value.icon || defaultIcon"></icon-item>
+        <icon-item :icon="icon"></icon-item>
         <span>{{card.value && card.value.name}}</span>
     </a>
 </template>
@@ -42,7 +47,8 @@ export default defineComponent({
     border-radius: 0.2em;
 }
 .link-card span{
-    flex: 1
+    flex: 1;
+    text-align: center;
 }
 
 </style>

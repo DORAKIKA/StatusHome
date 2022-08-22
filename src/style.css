@@ -25,3 +25,8 @@ html,body,#app{
     padding: 1em;
     border-radius: 1em;
 }
+.el-message{
+    left: unset;
+    right: 1em;
+    transform: translate(0, 1em)
+}

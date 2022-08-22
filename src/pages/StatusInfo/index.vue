@@ -79,7 +79,7 @@ export default defineComponent({
     gap: 1em;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(auto-fill, 8em);
-    grid-auto-rows: 10em;
+    grid-auto-rows: 8em;
     /* grid-auto-flow: dense; */
 }
 #status-info::-webkit-scrollbar{
@@ -146,6 +146,7 @@ export default defineComponent({
 .status-item.callout,
 .status-item:hover{
     background: var(--theme0);
+    text-shadow: 1px 2px rgba(0, 0, 0, 0.4);
 }
 .show .status-item{
     transform: scale(1);
