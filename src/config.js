@@ -137,7 +137,7 @@ const CONFIG = {
     use: {
         // 重定向(博客迁移可使用,末尾不要/)：https://dorakika.cn/xx => https://blog.dorakika.cn/xx
         redirect: {
-            enabled: false,
+            enabled: true,
             to: 'https://blog.dorakika.cn'
         },
         // 鼠标中键唤起status
