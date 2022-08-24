@@ -8,7 +8,7 @@ import CONFIG from './config'
 
 import {useRedirect} from '/src/mixins/redirect.js'
 import {useMiddleMouse} from '/src/mixins/mouse.js'
-import { useMetaInfo } from "./mixins/metaInfo";
+import { useLinkTag, useMetaInfo } from "./mixins/metaInfo";
 
 
 const state = reactive({
@@ -28,6 +28,8 @@ function enabled(key){
 
 // meta
 config.meta && useMetaInfo(config.meta)
+// link
+config.link && useLinkTag(config.link)
 // 重定向
 enabled('redirect') && useRedirect(config.use.redirect.to)
 // 鼠标中键

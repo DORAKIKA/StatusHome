@@ -126,6 +126,13 @@ const CONFIG = {
         keywords: 'DORAKIKA KIKA 主页 前端',
         description: 'DORAKIKA的个人主页',
     },
+    // link: 可链接样式文件（以public文件夹为根目录）
+    link: [
+        {
+            rel: 'icon',    // 网站图标
+            href: 'https://blog.dorakika.cn/img/icon_k.png'
+        }
+    ],
     // 一些辅助功能
     use: {
         // 重定向(博客迁移可使用,末尾不要/)：https://dorakika.cn/xx => https://blog.dorakika.cn/xx
