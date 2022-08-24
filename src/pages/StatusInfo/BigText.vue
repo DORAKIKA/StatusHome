@@ -15,14 +15,12 @@ export default defineComponent({
 </script>
 
 <template>
-    <component
-      :is="card.link ? 'a' : 'div'"
+    <div
       :href="card.link"
       class="big-text"
-      target="_blank"
     >
         {{card.value}}
-    </component>
+    </div>
 </template>
 
 <style scoped>

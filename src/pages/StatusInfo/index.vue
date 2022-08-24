@@ -28,8 +28,14 @@ export default defineComponent({
         })
         return ans;
     }
+    function handleClick(link){
+        if(link && link.length){
+            window.open(link, '_blank')
+        }
+    }
     return {
-        getCssVar
+        getCssVar,
+        handleClick
     }
   },
   
@@ -41,14 +47,18 @@ export default defineComponent({
         <template v-for="card,index in cards" :key="index">
             <component
                 class="status-item"
-                :class="{'callout': card.callout}"
+                :class="{
+                    'callout': card.callout,
+                    'pointer': card.link
+                }"
                 :is="card.type"
                 :card="card"
                 :style="{
-                ...getCssVar('--row',card.rowSize),
-                ...getCssVar('--col',card.colSize),
-                ...getCssVar('--theme',card.theme)
-            }"
+                    ...getCssVar('--row',card.rowSize),
+                    ...getCssVar('--col',card.colSize),
+                    ...getCssVar('--theme',card.theme),
+                }"
+                @click="handleClick(card.link)"
             ></component>
         </template>
     </div>

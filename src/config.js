@@ -115,11 +115,29 @@ const links = LINKS.map(link => {
         theme: [link.theme]
     }
 })
-
+ 
 
 const CONFIG = {
     background: "url('https://dora-world.com/assets/images/wallpaper/PC_wallpaper_202207.png')",
 
+    // 元数据：https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta/name
+    meta: {
+        author: 'DORAKIKA',
+        keywords: 'DORAKIKA KIKA 主页 前端',
+        description: 'DORAKIKA的个人主页',
+    },
+    // 一些辅助功能
+    use: {
+        // 重定向(博客迁移可使用,末尾不要/)：https://dorakika.cn/xx => https://blog.dorakika.cn/xx
+        redirect: {
+            enabled: false,
+            to: 'https://blog.dorakika.cn'
+        },
+        // 鼠标中键唤起status
+        middleMouse: {
+            enabled: true
+        }
+    },
     siteInfo: {
         site: 'DORAKIKA',
         desc: '热爱漫无边际，生活自有分寸！',
@@ -219,3 +237,4 @@ const CONFIG = {
 };
 
 window.CONFIG = CONFIG
+export default CONFIG
