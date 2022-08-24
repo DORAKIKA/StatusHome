@@ -6,9 +6,10 @@ import StatusBar from './layout/StatusBar.vue'
 
 import CONFIG from './config'
 
-import {useRedirect} from '/src/mixins/redirect.js'
-import {useMiddleMouse} from '/src/mixins/mouse.js'
-import { useLinkTag, useMetaInfo } from "./mixins/metaInfo";
+import {useRedirect} from '/src/plugins/redirect.js'
+import {useMiddleMouse} from '/src/plugins/mouse.js'
+import { useLinkTag, useMetaInfo } from "./plugins/metaInfo";
+import {use51la} from './plugins/51la'
 
 
 const state = reactive({
@@ -34,6 +35,8 @@ config.link && useLinkTag(config.link)
 enabled('redirect') && useRedirect(config.use.redirect.to)
 // 鼠标中键
 enabled('middleMouse') && useMiddleMouse(handleToggleStatus)
+// 51la统计
+enabled('tongji_51la') && use51la(config.use.tongji_51la)
 
 
 </script>

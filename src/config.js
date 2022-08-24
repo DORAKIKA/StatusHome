@@ -143,6 +143,12 @@ const CONFIG = {
         // 鼠标中键唤起status
         middleMouse: {
             enabled: true
+        },
+        // 51la统计
+        tongji_51la: {
+            enabled: true,
+            id: 'JfDeLdTDm4pOVeoL', // 应用统计掩码
+            ck: 'JfDeLdTDm4pOVeoL', // key值
         }
     },
     siteInfo: {
