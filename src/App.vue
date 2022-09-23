@@ -3,6 +3,7 @@ import { reactive } from "@vue/reactivity";
 import SiteInfo from '/src/pages/SiteInfo.vue'
 import StatusInfo from '/src/pages/StatusInfo/index.vue'
 import StatusBar from './layout/StatusBar.vue'
+import PageFooter from "./layout/PageFooter.vue";
 
 import CONFIG from './config'
 
@@ -50,6 +51,7 @@ enabled('tongji_51la') && use51la(config.use.tongji_51la)
     <site-info :site="config.siteInfo" class="page is-active"></site-info>
   </div>
   <status-info v-if="state.statusLoad" :cards="config.cards" :hide="state.statusHide"></status-info>
+  <page-footer :footer="config.footer"></page-footer>
 </template>
 
 <style>

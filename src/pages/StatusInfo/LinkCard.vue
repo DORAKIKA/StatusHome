@@ -28,10 +28,10 @@ export default defineComponent({
 </script>
 
 <template>
-    <a class="link-card" :href="card.link">
+    <div class="link-card" :href="card.link">
         <icon-item :icon="icon"></icon-item>
         <span>{{card.value && card.value.name}}</span>
-    </a>
+    </div>
 </template>
 
 <style scoped>

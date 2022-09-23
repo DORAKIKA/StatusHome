@@ -19,7 +19,7 @@ export default defineComponent({
       :href="card.link"
       class="big-text"
     >
-        {{card.value}}
+        <span class="text">{{card.value}}</span>
     </div>
 </template>
 
@@ -27,12 +27,22 @@ export default defineComponent({
 .big-text{
     width: 100%;
     height: 100%;
-    font-size: 3em;
-    font-family: YouSheBiaoTiHei;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.3s;
+}
+.big-text .tip{
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8em;
+}
+.big-text .text{
+    font-size: 3em;
 }
 .big-text:hover{
   background: var(--color0);

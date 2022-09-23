@@ -7,6 +7,7 @@ import Hitokoto from './Hitokoto.vue'
 import ImageCard from './ImageCard.vue';
 import LinkCard from './LinkCard.vue'
 import Divider from './Divider.vue'
+import StatusCard from '/src/components/Card/index.vue'
 
 
 export default defineComponent({
@@ -17,7 +18,8 @@ export default defineComponent({
     Hitokoto,
     ImageCard,
     LinkCard,
-    Divider
+    Divider,
+    StatusCard
   },
   setup(){
     function getCssVar(key, theme){
@@ -44,7 +46,12 @@ export default defineComponent({
 
 <template>
     <div id="status-info" class="status-info" :class="hide ? 'hide' : 'show'">
-        <template v-for="card,index in cards" :key="index">
+        <el-tooltip 
+            v-for="card,index in cards"
+            :key="index"
+            :content="card.tip"
+            :disabled="!card.tip"
+        >
             <component
                 class="status-item"
                 :class="{
@@ -57,10 +64,11 @@ export default defineComponent({
                     ...getCssVar('--row',card.rowSize),
                     ...getCssVar('--col',card.colSize),
                     ...getCssVar('--theme',card.theme),
+                    '--background': card.background
                 }"
                 @click="handleClick(card.link)"
             ></component>
-        </template>
+        </el-tooltip>
     </div>
 </template>
 
@@ -72,7 +80,7 @@ export default defineComponent({
     top: 0;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(12px);
-    padding: 4em 2em 2em;
+    padding: 4em 3em 2em;
     transition: 0.3s;
     overflow-y: scroll;
 
@@ -85,6 +93,7 @@ export default defineComponent({
     --row2: 1;
     --theme0: rgba(0,0,0,0.5);
     --theme1: rgba(255,255,255);
+    --background: rgba(0,0,0,0.5);
     display: grid;
     gap: 1em;
     grid-template-columns: repeat(12, 1fr);
@@ -132,7 +141,7 @@ export default defineComponent({
 .status-item{
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--background);
     color: #fff;
     border-radius: 16px;
     transition: 0.3s;
@@ -156,6 +165,9 @@ export default defineComponent({
 .status-item.callout,
 .status-item:hover{
     background: var(--theme0);
+    background-image: var(--background);
+    background-size: cover;
+    background-position: center;
     text-shadow: 1px 2px rgba(0, 0, 0, 0.4);
 }
 .show .status-item{
