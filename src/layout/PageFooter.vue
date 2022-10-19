@@ -10,7 +10,7 @@ const props = defineProps({
 <template>
     <footer id="footer">
         <div class="footer-links card">
-            <a href="item.link" class="footer-link" v-for="item in props.footer">
+            <a :href="item.link" class="footer-link" v-for="item in props.footer">
                 {{item.name}}
             </a>
         </div>
